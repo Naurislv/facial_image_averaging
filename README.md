@@ -8,12 +8,12 @@ This software will automatically find all images in given directory, find faces 
 |------------------------|---------------|
 | ![president_samples](images/president_samples.png) | ![president_results](images/president_results.png) |
 
-## Dependencies:
+## Dependencies
 
 1. python 3.x tested
 2. install requirements (will take some time) `pip install -r requirements.txt`
 
-## Run:
+## Run
 
 Note that first run will take more time because it will automatically download pretrained face detection model.
 
