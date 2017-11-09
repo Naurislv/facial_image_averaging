@@ -2,6 +2,8 @@
 
 This software will automatically find all images in given directory, find faces in images, find facial landmarks and average all faces into one image and then save it in results directory.
 
+See [notebook](face_average_example.ipynb) for more details.
+
 ## Example
 
 | | |
