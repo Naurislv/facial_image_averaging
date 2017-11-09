@@ -4,6 +4,7 @@
 import os
 import math
 import sys
+import glob
 
 # Local imports
 from face_landmarks import detect_landmarks
@@ -40,21 +41,24 @@ def readPoints(path) :
 
 # Read all jpg images in folder.
 def readImages(path) :
-    
+
     #Create array of array of images.
     imagesArray = []
-    
+
+    im_paths = glob.glob(os.path.join(path, '*.jpg'))
+    im_paths += glob.glob(os.path.join(path, '*.jpeg'))
+    im_paths += glob.glob(os.path.join(path, '*.png'))
+
     #List all files in the directory and read points from text files one by one
-    for filePath in sorted(os.listdir(path)):
-        if filePath.endswith(".jpg"):
-            # Read image found.
-            img = cv2.imread(os.path.join(path,filePath))
+    for filePath in sorted(im_paths):
+        # Read image found.
+        img = cv2.imread(filePath)
 
-            # Convert to floating point
-            img = np.float32(img)/255.0
+        # Convert to floating point
+        img = np.float32(img)/255.0
 
-            # Add to array of images
-            imagesArray.append(img)
+        # Add to array of images
+        imagesArray.append(img)
             
     return imagesArray
                 
